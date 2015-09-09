@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Hightower::VERSION
   s.authors     = ["Adam Akhtar"]
   s.email       = ["adam.akhtar@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Hightower."
-  s.description = "TODO: Description of Hightower."
+  s.homepage    = "https://github.com/robodisco/hightower"
+  s.summary     = "Interact with your users when they behave a certain way"
+  s.description = "Track how your users use your application and trigger actions based on predefined behaviour."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
