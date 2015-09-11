@@ -13,23 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20150909152122) do
 
-  create_table "hightower_segments", force: :cascade do |t|
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "hightower_segments", ["type"], name: "index_hightower_segments_on_type"
-
-  create_table "hightower_user_segments", force: :cascade do |t|
+  create_table "hightower_personas", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "segment_id"
+    t.boolean  "processed",  default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "hightower_personas", ["processed"], name: "index_hightower_personas_on_processed"
+  add_index "hightower_personas", ["segment_id"], name: "index_hightower_personas_on_segment_id"
+  add_index "hightower_personas", ["user_id"], name: "index_hightower_personas_on_user_id"
+
+  create_table "hightower_segments", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "hightower_user_segments", ["segment_id"], name: "index_hightower_user_segments_on_segment_id"
-  add_index "hightower_user_segments", ["user_id"], name: "index_hightower_user_segments_on_user_id"
+  add_index "hightower_segments", ["name"], name: "index_hightower_segments_on_name"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

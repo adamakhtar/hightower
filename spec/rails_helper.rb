@@ -8,7 +8,7 @@ require 'rspec/rails'
 require 'byebug'
 
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[File.expand_path(File.join(File.dirname(__FILE__),"support","**","*.rb"))].each {|f| require f}
 
 ActiveRecord::Migration.maintain_test_schema!
 
