@@ -6,9 +6,9 @@ module Hightower
       segment = create(:segment)
       user = create(:user)
 
-      segment.users << user
-      segment.users << user
-
+      segment.add_users(user)
+      segment.add_users(user)
+      
       expect(segment.users).to eq [user]
     end
   end

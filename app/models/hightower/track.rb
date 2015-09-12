@@ -11,7 +11,7 @@ module Hightower
     def perform
       segment = find_or_create_segment(behaviour)
       users = behaviour.observe
-      segment.users << users
+      segment.add_users(users)
       users
     end
 
