@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909152122) do
+ActiveRecord::Schema.define(version: 20150912125959) do
+
+  create_table "hightower_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "action"
+    t.text     "meta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "hightower_events", ["action"], name: "index_hightower_events_on_action"
+  add_index "hightower_events", ["user_id"], name: "index_hightower_events_on_user_id"
 
   create_table "hightower_personas", force: :cascade do |t|
     t.integer  "user_id"
