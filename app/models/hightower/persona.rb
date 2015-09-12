@@ -4,5 +4,7 @@ module Hightower
     belongs_to :segment
 
     validates :user_id, :segment_id, presence: true
+
+    scope :unprocessed, -> { where(processed: false) }
   end
 end
