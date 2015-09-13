@@ -9,6 +9,9 @@ en:
       unprocessed_label: 'Unprocessed'
       none_title: 'No segments to display'
       no_results: 'There are no results to display.'
+    users:
+      all_title: 'All users'
     nav:
       segments_link: 'Segments'
       events_link: 'Events'
+      users_link: 'Users'
