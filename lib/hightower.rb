@@ -1,11 +1,15 @@
 require "hightower/engine"
 
 module Hightower
-  mattr_accessor :authorization_method, :user_class, :redirect_unauthorized_path, :current_user_method
+  mattr_accessor :authorization_method, 
+                 :current_user_method,
+                 :redirect_unauthorized_path, 
+                 :user_class, 
+                 :user_label_method
 
   class << self
     def authorization_method      
-       @@authorization_method ||= :admin?
+      @@authorization_method ||= :admin?
     end
 
     def current_user_method
@@ -27,6 +31,10 @@ module Hightower
           @@user_class.constantize
         end
       end
+    end
+
+    def user_label_method
+      @@user_label_method ||= :email
     end
   end
 end

@@ -7,6 +7,8 @@ module Hightower
       
     validates :name, presence: true
 
+    scope :alphabetical, -> { order(name: :asc) }
+
     def self.for(behaviour)
       where(nane: behaviour.name).take
     end

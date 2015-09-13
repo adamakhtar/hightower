@@ -1,3 +1,11 @@
 en:
-	hightower:
-		access_denied: "You are not allowed to do that."
+  time:
+    formats:
+      hightower_long: "%a %B %d %Y %H:%M"
+  hightower:
+    access_denied: "You are not allowed to do that."
+    segments:
+      processed_label: 'Processed'
+      unprocessed_label: 'Unprocessed'
+    nav:
+      segments_link: 'Segments'

@@ -6,5 +6,12 @@ module Hightower
     validates :user_id, :segment_id, presence: true
 
     scope :unprocessed, -> { where(processed: false) }
+    scope :unprocessed, -> { where(processed: false) }
+    scope :unprocessed_first, -> { order(:processed) }
+    scope :newest_first, -> { order(:created_at) }
+
+    def user_label
+      user.send(Hightower.user_label_method.to_sym)
+    end
   end
 end
