@@ -7,5 +7,7 @@ en:
     segments:
       processed_label: 'Processed'
       unprocessed_label: 'Unprocessed'
+      none_title: 'No segments to display'
+      no_results: 'There are no results to display.'
     nav:
       segments_link: 'Segments'

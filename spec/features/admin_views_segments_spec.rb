@@ -28,4 +28,13 @@ feature "admin views segments" do
       expect(page).to_not have_content 'Mick Jagger'
     end
   end
+
+  scenario "and sees no segments notice" do
+    admin = signed_in_admin
+
+    visit hightower.segments_path
+
+    expect(page).to have_content t('hightower.segments.none_title')
+    expect(page).to have_content t('hightower.segments.no_results')
+  end
 end

@@ -20,7 +20,13 @@
         </tr>
       </thead>
       <tbody>
-        <%= render partial: 'hightower/segments/persona', collection: @filter.current_segment_personas %>
+        <% if @filter.no_results? %>
+          <div class="alert alert-info">
+            <%= t('hightower.segments.no_results') %>
+          </div>
+        <% else %>
+          <%= render partial: 'hightower/segments/persona', collection: @filter.current_segment_personas %>
+        <% end %>
       </tbody>
     </table>
   </section>
