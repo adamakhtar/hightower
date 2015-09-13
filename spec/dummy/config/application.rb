@@ -9,7 +9,10 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
+
 require "hightower"
+require "devise"
+require "devise/rails"
 
 module Dummy
   class Application < Rails::Application
