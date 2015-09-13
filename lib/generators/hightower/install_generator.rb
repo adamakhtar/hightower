@@ -75,7 +75,9 @@ output += step("`rake db:migrate` was run, running all the migrations against yo
    mount Hightower::Engine, :at => \"/hightower\"
 
    If you want to change where Hightower's dashboard is located, just change the \"/hightower\" path at the end of this line to whatever you want.\n\n")
-        output += %Q{Currently any persisted user can access the dashboard. You will want to lock this down to certain users such as admin. To do that you should define a method in your user model which returns true for authorized users. E.g. is_admin? etc. Then configure Hightower to use this method in the initializer file we just copied over.}
+        output += %Q{Currently any persisted user can access the dashboard. You will want to lock this down to certain users such as admin. To do that you should define a method in your user model which returns true for authorized users. E.g. is_admin? etc. Then configure Hightower to use this method in the initializer file we just copied over.\n\n}
+
+        output += %Q{Also you should tell Hightower in the initializer what method to use to display a user's identity. By default it will try using a method called 'email'.\n\n}
     
         output += "\nIf you have any questions, comments or issues, please post them on the issues page: http://github.com/robodisco/hightower/issues.\n\n"
         output += "Thanks for using Hightower!"
