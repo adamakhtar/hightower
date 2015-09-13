@@ -1,0 +1,23 @@
+<div class="row">
+  <aside class="filter">
+  </aside>
+
+  <section class="main">
+    <div class="page-header">
+      <h1 class="page-title"></h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Action</th>
+          <th>Info</th>
+          <th>Tracked at</th>
+        </tr>
+      </thead>
+      <tbody>        
+        <%= render partial: 'hightower/events/event', collection: @events %>
+      </tbody>
+    </table>
+  </section>
+</div>

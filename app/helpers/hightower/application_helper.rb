@@ -7,5 +7,9 @@ module Hightower
         t('hightower.segments.unprocessed_label') 
       end
     end
+
+    def user_name(user)
+      user.send(Hightower.user_label_method)
+    end
   end
 end

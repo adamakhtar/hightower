@@ -5,5 +5,7 @@ module Hightower
     validates :user_id, :action, presence: true
 
     serialize :meta
+
+    scope :newest_first, -> { order(created_at: :desc) }
   end
 end

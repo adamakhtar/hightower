@@ -11,3 +11,4 @@ en:
       no_results: 'There are no results to display.'
     nav:
       segments_link: 'Segments'
+      events_link: 'Events'
