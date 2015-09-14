@@ -5,7 +5,7 @@ module Hightower
     has_many :unprocessed_users, source: :user, through: :unprocessed_personas
     has_many :users, through: :personas
       
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: true
 
     scope :alphabetical, -> { order(name: :asc) }
 

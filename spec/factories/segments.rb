@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :segment, :class => 'Hightower::Segment' do
-    name 'SlippingAwayUsers'
+    sequence(:name){|x| "#{x} slipping away users"}
   end
 end
