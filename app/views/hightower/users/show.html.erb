@@ -1,0 +1,29 @@
+<div class="row">
+  <aside class="filter">
+    <ul class="list-group">
+      <% @segments.alphabetical.each do |segment| %>
+        <li class="list-group-item"><%= segment.name %></li>
+      <% end %>  
+    </ul>
+  </aside>
+
+  <section class="main">
+    <div class="page-header">
+      <h1 class="page-title"><%= user_name(@user) %></h1>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Action</th>
+          <th>Meta</th>
+          <th>Joined at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'hightower/events/event', collection: @events %>
+      </tbody>
+    </table>
+  </section>
+</div>

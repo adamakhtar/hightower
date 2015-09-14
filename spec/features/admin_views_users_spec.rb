@@ -16,4 +16,21 @@ feature "admin views users" do
       expect(page).to have_content 'Chun Li'
     end
   end
+
+  scenario "in detail" do
+    admin = signed_in_admin
+
+    user = create(:user, name: 'Mick Jagger')
+    event   = create(:event, user: user, action: 'logged in')
+    segment = create(:segment, name: 'slipping away users')
+    segment.add_users user
+
+    visit hightower.users_path
+
+    click_link 'Mick Jagger'
+
+    expect(page).to have_content 'Mick Jagger'
+    expect(page).to have_content 'slipping away users'
+    expect(page).to have_content 'logged in'
+  end
 end
