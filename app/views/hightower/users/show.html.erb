@@ -1,6 +1,7 @@
 <div class="row">
   <aside class="side-panel">
     <ul class="filter-options list-group">
+      <li class="list-group-item filter-header  "><%= t('hightower.users.their_segments') %></li>
       <% @segments.alphabetical.each do |segment| %>
         <li class="list-group-item"><%= segment.name %></li>
       <% end %>  

@@ -1,4 +1,10 @@
 .hightower {	
+
+	.filter-header {
+		text-transform: uppercase;
+		font-size: $font-size-small;
+		letter-spacing: 2px;
+	}
 	.filter-options > li >  a {
 		font-size: $font-size-small;
 		@include hover-link;

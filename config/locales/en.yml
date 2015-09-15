@@ -13,6 +13,7 @@ en:
       no_results: 'There are no results to display.'
     users:
       all_title: 'All users'
+      their_segments: 'Their segments'
     nav:
       segments_link: 'Segments'
       events_link: 'Events'
