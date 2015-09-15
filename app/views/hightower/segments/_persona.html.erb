@@ -1,5 +1,5 @@
 <tr>
-  <td><%= persona.user_label %></td>
+  <td><%= link_to user_name(persona.user), user_path(persona.user) %></td>
   <td><%= persona_processed_status(persona) %></td>
   <td><%= l persona.created_at, format: :hightower_long %></td>
 </tr>

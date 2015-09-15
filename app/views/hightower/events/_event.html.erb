@@ -1,5 +1,5 @@
 <tr>
-  <td><%= user_name(event.user) %></td>
+  <td><%= link_to user_name(event.user), user_path(event.user) %></td>
   <td><%= event.action %></td>
   <td><%= event.meta.inspect %></td>
   <td><%= l event.created_at, format: :hightower_long %></td>
