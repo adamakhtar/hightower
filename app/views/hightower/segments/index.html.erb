@@ -1,33 +1,33 @@
 <div class="row">
-  <aside class="filter">
-    <ul class="list-group">
+  <aside class="side-panel">
+    <ul class="filter-options list-group">
       <% @filter.segments.each do |segment| %>
         <li class="list-group-item"><%= link_to segment.name, segments_path(current_segment_id: segment.id) %></li>
       <% end %>
     </ul>
   </aside>
 
-  <section class="main">
+  <section class="main-panel">
     <div class="page-header">
       <h1 class="page-title"><%= @filter.current_segment.name %></h1>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Status</th>
-          <th>Added</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% if @filter.no_results? %>
-          <div class="alert alert-info">
-            <%= t('hightower.segments.no_results') %>
-          </div>
-        <% else %>
-          <%= render partial: 'hightower/segments/persona', collection: @filter.current_segment_personas %>
-        <% end %>
-      </tbody>
-    </table>
+    <% if @filter.no_results? %>
+      <div class="alert alert-info">
+        <%= t('hightower.segments.no_results') %>
+      </div>
+    <% else %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Status</th>
+            <th>Added</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%= render partial: 'hightower/segments/persona', collection: @filter.current_segment_personas %>
+        </tbody>
+      </table>
+    <% end %>
   </section>
 </div>

@@ -1,0 +1,22 @@
+.alert {
+	padding: $alert-padding;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: $alert-border-radius;
+
+	// Improve alignment and spacing of inner content
+	> p,
+	> ul {
+		margin-bottom: 0;
+	}
+
+	> p + p {
+		margin-top: 5px;
+	}
+}
+
+.alert-info {
+	background-color: $alert-info-bg;
+	border-color: $alert-info-border;
+	color: $alert-info-text;
+}

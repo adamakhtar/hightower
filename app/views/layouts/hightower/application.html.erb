@@ -6,7 +6,7 @@
   <%= javascript_include_tag "hightower/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= css_body_classes %>">
   <%= render 'hightower/application/nav' %>
   <div class="container">
     <%= yield %>

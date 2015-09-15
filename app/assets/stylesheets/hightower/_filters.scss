@@ -1,0 +1,6 @@
+.hightower {	
+	.filter-options > li >  a {
+		font-size: $font-size-small;
+		@include hover-link;
+	}
+}

@@ -1,0 +1,25 @@
+.hightower {
+	.container {
+		@include container;
+	}
+
+	.row {
+		@include make-row;
+	}
+
+	aside.side-panel {
+		@include make-column(3);
+	}
+
+	section.main-panel {
+		@include make-column(9)
+	}
+
+	section.main {
+		@include make-column(10);
+		@include make-column-offset(1);
+	}
+}
+
+
+

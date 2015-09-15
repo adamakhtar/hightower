@@ -1,13 +1,13 @@
 <div class="row">
-  <aside class="filter">
-    <ul class="list-group">
+  <aside class="side-panel">
+    <ul class="filter-options list-group">
       <% @segments.alphabetical.each do |segment| %>
         <li class="list-group-item"><%= segment.name %></li>
       <% end %>  
     </ul>
   </aside>
 
-  <section class="main">
+  <section class="main-panel">
     <div class="page-header">
       <h1 class="page-title"><%= user_name(@user) %></h1>
     </div>

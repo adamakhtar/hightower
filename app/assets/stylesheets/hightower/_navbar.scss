@@ -1,0 +1,52 @@
+.navbar {
+	height: 69px;
+	border-bottom: 1px solid $navbar-border-color;
+	background-color: $navbar-bg;
+}
+
+.navbar-brand {
+	float: left;
+}
+
+.navbar-workmark {
+	line-height: 68px;
+	text-decoration: none;
+	font-size: 24px;
+	color: $navbar-brand-color;
+
+	&:hover {
+		color: $navbar-brand-hover-color;		
+		text-decoration: none;
+	}
+}
+
+.navbar-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	float: right;
+
+	> li {
+		display: inline-block;
+		margin-left: 10px;
+		margin-right: 10px;
+
+		> a {
+			color: $navbar-link-color;
+			line-height: 68px;
+			text-decoration: none;
+			display: block;
+			padding-left: 10px;
+			padding-right: 10px;
+			text-transform: uppercase;
+			font-size: 11px;
+			letter-spacing: 2px;
+
+			&:hover {
+				color: $navbar-link-hover-color;
+				text-decoration: underline;				
+				background-color: $navbar-link-hover-bg;
+			}
+		}
+	}
+}

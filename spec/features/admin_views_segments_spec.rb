@@ -14,7 +14,7 @@ feature "admin views segments" do
     
     click_link t('hightower.nav.segments_link')
 
-    within('.main') do
+    within('.main-panel') do
       expect(page).to have_content 'created first project users'
       expect(page).to have_content 'Mick Jagger'
       expect(page).to_not have_content 'Bob Dylan'
@@ -22,7 +22,7 @@ feature "admin views segments" do
 
     click_link 'slipping away users'
 
-    within('.main') do
+    within('.main-panel') do
       expect(page).to have_content 'slipping away users'
       expect(page).to have_content 'Bob Dylan'
       expect(page).to_not have_content 'Mick Jagger'

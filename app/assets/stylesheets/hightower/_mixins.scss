@@ -1,0 +1,58 @@
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix;
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+}
+
+@mixin make-column($columns) {
+  position: relative;
+  float: left;
+  width: percentage(($columns / $grid-columns));
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-column-offset($columns) {
+  margin-left: percentage(($columns / $grid-columns));
+}
+
+@mixin make-column-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+
+@mixin make-column-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+
+@mixin hover-link(){
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}

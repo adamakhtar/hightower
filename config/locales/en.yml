@@ -4,6 +4,8 @@ en:
       hightower_long: "%a %B %d %Y %H:%M"
   hightower:
     access_denied: "You are not allowed to do that."
+    events: 
+      all_title: 'All events'
     segments:
       processed_label: 'Processed'
       unprocessed_label: 'Unprocessed'

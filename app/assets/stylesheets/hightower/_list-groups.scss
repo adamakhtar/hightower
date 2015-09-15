@@ -1,0 +1,27 @@
+.hightower {
+	.list-group {
+	  margin-bottom: 20px;
+	  padding-left: 0; 
+	}
+
+	.list-group-item {
+	  position: relative;
+	  display: block;
+	  padding: 10px 15px;
+	  // Place the border on the list items and negative margin up for better styling
+	  margin-bottom: -1px;
+	  background-color: $list-group-bg;
+	  border: 1px solid $list-group-border;
+
+	  // Round the first and last items
+	  &:first-child {
+	  	border-top-right-radius: $list-group-border-radius;
+	  	border-top-left-radius: $list-group-border-radius;
+	  }
+	  &:last-child {
+	    margin-bottom: 0;
+	    border-bottom-right-radius: $list-group-border-radius;
+		border-bottom-left-radius: $list-group-border-radius;
+	  }
+	}
+}
