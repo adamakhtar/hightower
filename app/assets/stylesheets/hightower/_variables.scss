@@ -7,6 +7,11 @@ $alert-info-text:                #31708f !default;
 $alert-info-bg:                  #d9edf7 !default;
 $alert-info-border:              darken(adjust-hue($alert-info-bg, -10), 7%) !default;
 
+$badge-color: #fff;
+$badge-line-height: 1.4;
+$badge-bg: #222;
+$badge-border-radius: 50px;
+
 $font-size-h1: 36px;
 $font-size-h2: 26px;
 $font-size-h3: 19px;
