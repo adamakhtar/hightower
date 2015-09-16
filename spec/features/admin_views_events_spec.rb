@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "admin views events" do
-  scenario "all in one list" do
+  scenario "and filter by action" do
     admin = signed_in_admin
 
     user_a = create(:user, name: 'Naseem Hamed')
@@ -14,7 +14,7 @@ feature "admin views events" do
     
     click_link t('hightower.nav.events_link')
 
-    within('.main') do
+    within('.main-panel') do
       expect(page).to have_content user_a.name
       expect(page).to have_content 'created tweet'
       expect(page).to have_content 'message'
@@ -24,6 +24,15 @@ feature "admin views events" do
       expect(page).to have_content 'liked movie'
       expect(page).to have_content 'title'
       expect(page).to have_content 'The Avengers'
+    end
+
+    within '.filter-options' do
+      click_link 'liked movie'
+    end
+
+    within('.main-panel') do
+      expect(page).to have_content 'The Avengers'
+      expect(page).to_not have_content 'hi there'
     end
   end
 end

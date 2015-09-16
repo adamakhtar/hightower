@@ -3,7 +3,7 @@ require_dependency "hightower/application_controller"
 module Hightower
   class EventsController < ApplicationController
     def index
-      @events = Event.newest_first
+      @filter = EventsFilter.new(Event.all, params[:current_action])
     end
   end
 end

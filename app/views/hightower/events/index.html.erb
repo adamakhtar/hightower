@@ -1,10 +1,16 @@
 <div class="row">
-  <aside class="filter">
+  <aside class="side-panel">
+    <ul class="filter-options list-group">
+      <li class="list-group-item"><%= link_to t('hightower.events.all_filter_link'), events_path %><span class="badge"><%= @filter.scope.count %></span></li> 
+      <% @filter.events_with_counts.each do |event| %>
+        <li class="list-group-item"><%= link_to event.first, events_path(current_action: event.first ) %><span class="badge"><%= event.last %></span></li> 
+      <% end %>
+    </ul>
   </aside>
 
-  <section class="main">
+  <section class="main-panel">
     <div class="page-header">
-      <h1 class="page-title"><%= t('hightower.events.all_title') %></h1>
+      <h1 class="page-title"><%= title_for_current_filter(@filter) %></h1>
     </div>
     <table class="table">
       <thead>
@@ -16,7 +22,7 @@
         </tr>
       </thead>
       <tbody>        
-        <%= render partial: 'hightower/events/event', collection: @events %>
+        <%= render partial: 'hightower/events/event', collection: @filter.events %>
       </tbody>
     </table>
   </section>

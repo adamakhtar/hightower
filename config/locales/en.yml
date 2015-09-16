@@ -6,6 +6,7 @@ en:
     access_denied: "You are not allowed to do that."
     events: 
       all_title: 'All events'
+      all_filter_link: 'All events'
     segments:
       processed_label: 'Processed'
       unprocessed_label: 'Unprocessed'
