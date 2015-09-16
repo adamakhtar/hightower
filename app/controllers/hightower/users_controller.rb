@@ -10,6 +10,7 @@ module Hightower
       @user = User.find(params[:id])
       @segments = Segment.joins(:personas).where('hightower_personas.user_id = ? ', @user.id).alphabetical
       @events = Event.where(user: @user).newest_first
+      @filter = EventsFilter.new(@events, params[:current_action])
     end
   end
 end

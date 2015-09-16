@@ -9,7 +9,7 @@ module Hightower
     end
 
     def events_with_counts
-      Event.group('action').count('user_id')
+      scope.group('action').count('user_id')
     end
 
     def events  
