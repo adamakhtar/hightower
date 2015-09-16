@@ -30,8 +30,11 @@ module Hightower
       current_segment_personas.none?
     end
 
-    def segments
-      Segment.all.alphabetical
+    def segments_with_counts
+      Segment.joins(:personas).
+              select('hightower_segments.name, hightower_segments.id, count(hightower_personas.segment_id) as users_count').
+              group('hightower_segments.id').
+              alphabetical
     end
 
     def current_segment_personas
