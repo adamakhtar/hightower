@@ -12,6 +12,10 @@ module Hightower
       scope.group('action').count('user_id')
     end
 
+    def current_action?(action)
+      current_action == action
+    end
+
     def events  
       if current_action.present?
         scope.where(action: current_action) 
