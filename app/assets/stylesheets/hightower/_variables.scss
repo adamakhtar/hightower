@@ -36,7 +36,6 @@ $panel-text: #444;
 $panel-border: #ddd;
 $panel-heading-bg:  #f5f5f5;
 
-
 $navbar-bg: #333;
 $navbar-text: #ccc;
 $navbar-link-color: #fff;
@@ -45,6 +44,8 @@ $navbar-link-hover-bg: #444;
 $navbar-border-color: #222;
 $navbar-brand-color: #fff;
 $navbar-brand-hover-color: #eee;
+$navbar-default-link-active-color:         #fff;
+$navbar-default-link-active-bg:            lighten($navbar-bg, 10.5%);
 
 $table-bg: #fff;
 $table-cell-padding: 8px; 

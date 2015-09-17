@@ -1,5 +1,10 @@
 module Hightower
   module ApplicationHelper
+
+    def nav_link_class(link_name)
+      "active" if controller_name == link_name.to_s
+    end
+
     def css_body_classes
       "hightower " +
       "hightower_#{ controller_name } " +

@@ -4,9 +4,9 @@
       <%= link_to 'Hightower', root_path, class: 'navbar-workmark' %>
     </div>
     <ul class="navbar-links">
-      <li><%= link_to t('hightower.nav.segments_link'), segments_path %></li>
-      <li><%= link_to t('hightower.nav.events_link'), events_path %></li>
-      <li><%= link_to t('hightower.nav.users_link'), users_path %></li>
+      <li><%= link_to t('hightower.nav.segments_link'), segments_path, class: nav_link_class(:segments) %></li>
+      <li><%= link_to t('hightower.nav.events_link'), events_path, class: nav_link_class(:events) %></li>
+      <li><%= link_to t('hightower.nav.users_link'), users_path, class: nav_link_class(:users) %></li>
     </ul>
   </div>
 </nav>
