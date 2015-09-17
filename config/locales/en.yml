@@ -15,6 +15,7 @@ en:
     users:
       all_title: 'All users'
       their_segments: 'Their segments'
+      their_events: 'Their events'
     nav:
       segments_link: 'Segments'
       events_link: 'Events'
