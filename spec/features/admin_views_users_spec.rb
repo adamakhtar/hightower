@@ -11,7 +11,7 @@ feature "admin views users" do
     
     click_link t('hightower.nav.users_link')
 
-    within('.main') do
+    within('.main-panel') do
       expect(page).to have_content 'Sonic Hedgehog'
       expect(page).to have_content 'Chun Li'
     end

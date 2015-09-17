@@ -1,10 +1,14 @@
 <div class="row">
-  <aside class="filter">
-    <ul class="list-group">
-    </ul>
+  <aside class="side-panel">
+    <%= form_tag users_path, class: 'search-users-form', method: :get do %>
+      <%= search_field_tag :query, params[:query], placeholder: t('hightower.users.search'), autofocus: true %>
+      <div class="search-users-actions">
+        <%= link_to t('hightower.users.reveal_all'), users_path %>
+      </div>
+    <% end %>
   </aside>
 
-  <section class="main">
+  <section class="main-panel">
     <div class="page-header">
       <h1 class="page-title"><%= t('hightower.users.all_title') %></h1>
     </div>

@@ -13,6 +13,8 @@ en:
       none_title: 'No segments to display'
       no_results: 'There are no results to display.'
     users:
+      search: 'Search'
+      reveal_all: 'Reveal all'
       all_title: 'All users'
       their_segments: 'Their segments'
       their_events: 'Their events'
