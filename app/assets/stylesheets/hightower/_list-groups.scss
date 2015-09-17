@@ -1,33 +1,61 @@
 .hightower {
-	.list-group {
-	  margin-bottom: 20px;
-	  padding-left: 0; 
-	}
+    .list-group {
+        margin-bottom: 20px;
+        padding-left: 0; 
+    }
 
-	.list-group-item {
-	  position: relative;
-	  display: block;
-	  padding: 10px 15px;
-	  // Place the border on the list items and negative margin up for better styling
-	  margin-bottom: -1px;
-	  background-color: $list-group-bg;
-	  border: 1px solid $list-group-border;
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        // Place the border on the list items and negative margin up for better styling
+        margin-bottom: -1px;
+        background-color: $list-group-bg;
+        border: 1px solid $list-group-border;
 
-	  // Round the first and last items
-	  &:first-child {
-	  	border-top-right-radius: $list-group-border-radius;
-	  	border-top-left-radius: $list-group-border-radius;
-	  }
-	  &:last-child {
-	    margin-bottom: 0;
-	    border-bottom-right-radius: $list-group-border-radius;
-		border-bottom-left-radius: $list-group-border-radius;
-	  }
+        // Round the first and last items
+        &:first-child {
+            border-top-right-radius: $list-group-border-radius;
+            border-top-left-radius: $list-group-border-radius;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom-right-radius: $list-group-border-radius;
+            border-bottom-left-radius: $list-group-border-radius;
+        }
 
-	  .badge {
-	  	float: right;
-	  }
-	}
+        .badge {
+            float: right;
+        }
 
+        // Active class on item itself, not parent
+        &.active,
+        &.active:hover,
+        &.active:focus {
+            z-index: 2; // Place active items above their siblings for proper border styling
+            color: $list-group-active-color;
+            background-color: $list-group-active-bg;
+            border-color: $list-group-active-border;
 
+            a {
+                color: inherit;
+            }
+
+            .badge {
+                background-color: $list-group-bg;
+                color: #222;
+            }
+        }
+
+        // Force color to inherit for custom content
+        .list-group-item-heading,
+        .list-group-item-heading > small,
+        .list-group-item-heading > .small {
+              color: inherit;
+        }
+
+        .list-group-item-text {
+              color: $list-group-active-text-color;
+        }
+    }
 }

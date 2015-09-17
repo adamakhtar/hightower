@@ -26,6 +26,10 @@ module Hightower
       end
     end
 
+    def current_segment?(segment)
+      current_segment == segment
+    end
+
     def no_results?
       current_segment_personas.none?
     end

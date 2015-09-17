@@ -2,7 +2,7 @@
   <aside class="side-panel">
     <ul class="filter-options list-group">
       <% @filter.segments_with_counts.each do |segment| %>
-        <li class="list-group-item">
+        <li class="list-group-item <%= segment_dom_class(@filter, segment) %>">
           <%= link_to segment.name, segments_path(current_segment_id: segment.id) %>
           <span class="badge"><%= segment.users_count %></span>
         </li>
@@ -34,3 +34,5 @@
     <% end %>
   </section>
 </div>
+
+
