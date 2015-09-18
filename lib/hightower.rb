@@ -1,8 +1,10 @@
 require "hightower/engine"
+require 'kaminari'
 
 module Hightower
   mattr_accessor :authorization_method, 
                  :current_user_method,
+                 :per_page,
                  :redirect_unauthorized_path, 
                  :user_class, 
                  :user_label_method
@@ -14,6 +16,10 @@ module Hightower
 
     def current_user_method
       @@current_user_method ||= :current_user
+    end
+
+    def per_page
+      @@per_page || 40
     end
 
     def redirect_unauthorized_path
