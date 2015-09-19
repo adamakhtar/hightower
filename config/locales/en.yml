@@ -16,8 +16,8 @@ en:
       search: 'Search'
       reveal_all: 'Reveal all'
       all_title: 'All users'
-      their_segments: 'Their segments'
-      their_events: 'Their events'
+      their_segments: "User's segments"
+      their_events: "User's events"
     nav:
       segments_link: 'Segments'
       events_link: 'Events'
