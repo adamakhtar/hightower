@@ -9,6 +9,7 @@
 
 	aside.side-panel {
 		@include make-column(3);
+		margin-top: 85px;
 	}
 
 	section.main-panel {
