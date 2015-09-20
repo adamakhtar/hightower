@@ -34,8 +34,10 @@
         </tr>
       </thead>
       <tbody>
-        <%= render partial: 'hightower/events/event', collection: @filter.events %>
+        <%= render partial: 'hightower/events/event', collection: @events %>
       </tbody>
     </table>
+
+    <%= paginate @events %>
   </section>
 </div>
