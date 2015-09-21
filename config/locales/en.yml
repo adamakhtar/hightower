@@ -7,10 +7,11 @@ en:
     events: 
       all_title: 'All events'
       all_filter_link: 'All events'
+      none_title: 'No events'
     segments:
       processed_label: 'Processed'
       unprocessed_label: 'Unprocessed'
-      none_title: 'No segments to display'
+      none_title: 'No segments'
       no_results: 'There are no results to display.'
     users:
       back_to_all_link: 'Back to all users'
