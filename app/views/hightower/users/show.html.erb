@@ -1,7 +1,5 @@
 <div class="row">
   <aside class="side-panel">
-
-    <%= link_to t('hightower.users.back_to_all_link'), users_path %>
     
     <ul class="filter-options list-group">
       <li class="list-group-item filter-header"> <%= t('hightower.users.their_events') %></li>
@@ -20,22 +18,32 @@
   <section class="main-panel">
     <div class="page-header">
       <h1 class="page-title"><%= @dashboard.title %></h1>
+    </div>  
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @dashboard.events_tabs.current %>
+        </h3>
+      </div>
+
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Action</th>
+              <th>Meta</th>
+              <th>Joined at</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'hightower/events/event', collection: @dashboard.paginated_events %>
+          </tbody>
+        </table>
+
+        <%= paginate @dashboard.paginated_events %>
+      </div>
     </div>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Action</th>
-          <th>Meta</th>
-          <th>Joined at</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render partial: 'hightower/events/event', collection: @dashboard.paginated_events %>
-      </tbody>
-    </table>
-
-    <%= paginate @dashboard.paginated_events %>
   </section>
 </div>

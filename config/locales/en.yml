@@ -5,15 +5,16 @@ en:
   hightower:
     access_denied: "You are not allowed to do that."
     events: 
-      all_title: 'All events'
-      all_filter_link: 'All events'
+      title: 'Events'
       none_title: 'No events'
     segments:
-      processed_label: 'Processed'
-      unprocessed_label: 'Unprocessed'
       none_title: 'No segments'
       no_results: 'There are no results to display.'
+      processed_label: 'Processed'
+      title: 'Your segments'
+      unprocessed_label: 'Unprocessed'
     users:
+      events_title: 'Their events'
       back_to_all_link: 'Back to all users'
       search: 'Search'
       reveal_all: 'Reveal all'

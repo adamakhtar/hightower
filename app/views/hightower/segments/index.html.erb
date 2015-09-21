@@ -7,27 +7,36 @@
 
   <section class="main-panel">
     <div class="page-header">
-      <h1 class="page-title"><%= @dashboard.title %></h1>
+      <h1 class="page-title"><%= t('hightower.segments.title') %></h1>
     </div>
-    <% if @dashboard.personas.empty? %>
-      <div class="alert alert-info">
-        <%= t('hightower.segments.no_results') %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @dashboard.title %></h3>
       </div>
-    <% else %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Status</th>
-            <th>Added</th>
-          </tr>
-        </thead>
-        <tbody>
-            <%= render partial: 'hightower/segments/persona', collection: @dashboard.paginated_personas %>
-        </tbody>
-      </table>
-      <%= paginate @dashboard.paginated_personas %>
-    <% end %>
+
+      <div class="panel-body">
+        <% if @dashboard.personas.empty? %>
+          <div class="alert alert-info">
+            <%= t('hightower.segments.no_results') %>
+          </div>
+        <% else %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Status</th>
+                <th>Added</th>
+              </tr>
+            </thead>
+            <tbody>
+                <%= render partial: 'hightower/segments/persona', collection: @dashboard.paginated_personas %>
+            </tbody>
+          </table>
+          <%= paginate @dashboard.paginated_personas %>
+        <% end %>
+      </div>
+    </div>
   </section>
 </div>
 
