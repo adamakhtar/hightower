@@ -34,6 +34,10 @@ module Hightower
       end 
     end
 
+    def paginated_personas
+      @paginated_personas ||= personas.page(params[:page]).per(Hightower.per_page)
+    end
+
     private
 
     attr_reader :params

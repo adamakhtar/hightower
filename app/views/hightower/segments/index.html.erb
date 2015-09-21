@@ -23,9 +23,10 @@
           </tr>
         </thead>
         <tbody>
-            <%= render partial: 'hightower/segments/persona', collection: @dashboard.personas %>
+            <%= render partial: 'hightower/segments/persona', collection: @dashboard.paginated_personas %>
         </tbody>
       </table>
+      <%= paginate @dashboard.paginated_personas %>
     <% end %>
   </section>
 </div>
