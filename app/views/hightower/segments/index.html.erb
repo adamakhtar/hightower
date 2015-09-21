@@ -1,20 +1,15 @@
 <div class="row">
   <aside class="side-panel">
     <ul class="filter-options list-group">
-      <% @filter.segments_with_counts.each do |segment| %>
-        <li class="list-group-item <%= segment_dom_class(@filter, segment) %>">
-          <%= link_to segment.name, segments_path(current_segment_id: segment.id) %>
-          <span class="badge"><%= segment.users_count %></span>
-        </li>
-      <% end %>
+      <%= render partial: @dashboard.segments_tabs.tabs, as: :tab %>
     </ul>
   </aside>
 
   <section class="main-panel">
     <div class="page-header">
-      <h1 class="page-title"><%= @filter.current_segment.name %></h1>
+      <h1 class="page-title"><%= @dashboard.title %></h1>
     </div>
-    <% if @filter.no_results? %>
+    <% if @dashboard.personas.empty? %>
       <div class="alert alert-info">
         <%= t('hightower.segments.no_results') %>
       </div>
@@ -28,7 +23,7 @@
           </tr>
         </thead>
         <tbody>
-            <%= render partial: 'hightower/segments/persona', collection: @filter.current_segment_personas %>
+            <%= render partial: 'hightower/segments/persona', collection: @dashboard.personas %>
         </tbody>
       </table>
     <% end %>
