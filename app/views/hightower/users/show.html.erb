@@ -5,23 +5,20 @@
 
     <ul class="filter-options list-group">
       <li class="list-group-item filter-header"><%= t('hightower.users.their_segments') %></li>
-      <% @segments.alphabetical.each do |segment| %>
+      <% @dashboard.segments.each do |segment| %>
         <li class="list-group-item"><%= segment.name %></li>
       <% end %>  
     </ul>
 
     <ul class="filter-options list-group">
       <li class="list-group-item filter-header"> <%= t('hightower.users.their_events') %></li>
-      <li class="list-group-item <%= event_dom_class(@filter) %>"><%= link_to t('hightower.events.all_filter_link'), user_path(@user) %><span class="badge"><%= @filter.scope.count %></span></li> 
-      <% @filter.events_with_counts.each do |event| %>
-        <li class="list-group-item <%= event_dom_class(@filter, event.first) %>"><%= link_to event.first, user_path(@user, current_action: event.first ) %><span class="badge"><%= event.last %></span></li> 
-      <% end %>
+      <%= render partial: @dashboard.events_tabs.tabs, as: :tab, locals: {user: @dashboard.user }%>
     </ul>
   </aside>
 
   <section class="main-panel">
     <div class="page-header">
-      <h1 class="page-title"><%= user_name(@user) %></h1>
+      <h1 class="page-title"><%= @dashboard.title %></h1>
     </div>
 
     <table class="table">
@@ -34,10 +31,10 @@
         </tr>
       </thead>
       <tbody>
-        <%= render partial: 'hightower/events/event', collection: @events %>
+        <%= render partial: 'hightower/events/event', collection: @dashboard.paginated_events %>
       </tbody>
     </table>
 
-    <%= paginate @events %>
+    <%= paginate @dashboard.paginated_events %>
   </section>
 </div>

@@ -1,0 +1,4 @@
+<li class="list-group-item <%= tab.active_class %>">
+  <%= link_to tab.label, user_path(user, current_event: tab.label) %>
+  <span class="badge"><%= tab.badge %></span>
+</li> 
