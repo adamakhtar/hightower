@@ -5,7 +5,7 @@ module Hightower
     describe "#perform" do
       it "creates segment for behaviour if it doesnt exist" do
         user = create(:user)
-        behaviour = stub_behaviour( name: 'slipping away users', users: [user])
+        behaviour = stub_behaviour(name: 'slipping away users', users: [user])
         
         Track.perform(behaviour)
 
@@ -24,7 +24,7 @@ module Hightower
       end
 
       def stub_behaviour(name:, users:)
-        behaviour = double(:behaviour, name: name, observe: users)
+        behaviour = double(:behaviour, human_name: name, observe: users)
       end
     end
   end
