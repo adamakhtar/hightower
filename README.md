@@ -1,5 +1,7 @@
 # Hightower
 
+![Hightower dashboard](https://dl.dropboxusercontent.com/u/4298391/images_for_github_readme_files/hightower.png)
+
 Hightower lets you monitor your users for predefined behavior and respond accordingly. 
 
 You could look out for users who:
@@ -9,7 +11,7 @@ You could look out for users who:
 - have participated a lot in your forum.
 - have yet to have uploaded an avatar.
 
-...and create an automated reaction to these users such as:
+...and **create an automated response** to these users such as:
 
 - sending them a friendly email 
 - sending them an internal message to welcome them on their next visit
