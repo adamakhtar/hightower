@@ -1,4 +1,4 @@
-= Hightower
+# Hightower
 
 Hightower lets you monitor your users for predefined behavior and respond accordingly. 
 
@@ -20,9 +20,9 @@ You could look out for users who:
 
 ## Installation
 
+Gemfile.rb
 ```ruby
-# Gemfile
-gem 'hightower', github: 'robodisco/hightower'
+gem "hightower", github: "robodisco/hightower"
 ```
 
 ```bash
@@ -38,7 +38,7 @@ Running the install will
 
 ###Configuring Hightower###
 
-In the initializer file you will want to change a few of the first default settings.
+In the initializer file you will want to change a few of the default settings.
 
 **1) Your User class**
 
@@ -64,9 +64,10 @@ Then tell Hightower the name of the method via:
 `Hightower.authorization_method = :can_access_hightower?`
 
 **3) Providing a label method for your user**
+
 In the dashboard Hightower will display users by calling  #email on each user.If you want to display something else instead simply pass the name of the method via
 
-`Hightower.user_label_method =s :full_name`
+`Hightower.user_label_method = :full_name`
 
 **4) And more**
 
@@ -86,13 +87,9 @@ In models/hightower create the file `just_joined_but_no_avatar.rb` and define th
 module Hightower
     class JustJonedButNoAvatar
         include Behaviour
-
         def observe
-            # You'd probably want to use sql as much as possible but 
-            # to keep things easy to read I'll use ruby here
-
             matched_users = []
-            User.where('created_at > ?', 3.days.ago).find_each do |user|
+            User.where("created_at > ?", 3.days.ago).find_each do |user|
                 matched_users << unless user.avatar.present?
             end
             matched_users
@@ -117,7 +114,6 @@ module Hightower
         include Behaviour
 
         def observe
-            # As per above
             # ...
         end
 
@@ -177,6 +173,7 @@ Hightower::Event.create(user_id: @user.id, action: 'liked movie', meta: {title: 
 
 You can then use these in your behavior classes like so to match users who really like movies
 
+```ruby
 module Hightower
     class UsersWhoLikesMovies
         def observe
@@ -191,6 +188,7 @@ module Hightower
         end
     end
 end
+```
 
 **Note:** whilst the event model has a meta attribute it is just for additional information that you may find useful viewing from the dashboard. Unfortunately it can't be searched against as its a serialized column in the db so you won't be able to use it in your observe methods (unless you pull the records out of the db and user ruby to inspect the meta hash record by record.)
 
@@ -200,7 +198,7 @@ Visit /hightower to see your dashboard. From here you can see all the users in t
 
 ## Shortcomings and the future
 
-Currently when a user is added to a segment they remain there permanently even if their behavior changes to the one you originally defined. In terms of reacting to behavior this has no impact as users are still responded to on entry and are protected from being responded to more than oncee. 
+Currently when a user is added to a segment they remain there permanently even if their behavior changes to the one you originally defined. In terms of reacting to behavior this has no impact as users are still responded to on entry and are protected from being responded to more than once. 
 
 But it does mean the users you see in the segments dashboard may not actually still match the behavior you defined.. This is something I'll tackle in the next version.
 
