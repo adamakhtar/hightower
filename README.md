@@ -1,5 +1,8 @@
 # Hightower
 
+
+** NOTE: ** This project is not complete. Feel free to fork and fix it **
+
 ![Hightower dashboard](https://dl.dropboxusercontent.com/u/4298391/images_for_github_readme_files/hightower.png)
 
 Hightower lets you monitor your users for predefined behavior and respond accordingly. 
